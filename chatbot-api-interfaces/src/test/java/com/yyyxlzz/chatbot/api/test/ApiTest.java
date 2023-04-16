@@ -42,7 +42,7 @@ public class ApiTest {
             System.out.println(response.getStatusLine().getStatusCode());
         }
 
-        // 获取要回复的评论的id
+        // 获取要回复的评论的id-
 
     }
 

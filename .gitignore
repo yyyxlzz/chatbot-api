@@ -25,3 +25,7 @@ hs_err_pid*
 /*.iml
 
 /*/*.iml
+/.idea/
+
+/docs/ppt/~*.pptx
+/docs/config/docker.config

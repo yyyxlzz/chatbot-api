@@ -27,7 +27,7 @@ public class ApiTest {
     @Test
     public void query_unanswered_questions() throws IOException {
 
-        // 每次登录的http和cookie不同
+        // 每次登录的http和cookie不同1
 
         CloseableHttpClient httpClient  = HttpClientBuilder.create().build();
         HttpGet get = new HttpGet("https://user.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/get_msgb?uin=2865301533&hostUin=2865301533&start=0&s=0.9847448686276938&format=jsonp&num=10&inCharset=utf-8&outCharset=utf-8&g_tk=1066147756&g_tk=1066147756");

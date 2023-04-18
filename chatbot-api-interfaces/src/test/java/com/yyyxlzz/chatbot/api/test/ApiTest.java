@@ -63,8 +63,8 @@ public class ApiTest {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
         // 每次登录换http和cookie
-        HttpPost post = new HttpPost("https://h5.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/add_reply?&g_tk=1066147756");
-        post.addHeader("cookie", "_qpsvr_localtk=0.8547841273414496; RK=jEKI1i3Suz; ptcz=68de294bf6ccd1c2200f4e2663907478975db314035ed09ecc6d8b3a76d6fc78; pgv_si=s8238196736; pgv_pvi=5708006400; pgv_info=ssid=s9214023430; pgv_pvid=9746592055; rv2=8020287853B5DF8D0E0134EE55DBB5D57A516773A644875B68; property20=DF628F5C3BDC238491778E21AB62848825EBCE0B8316CF01845DED188AA2D6DA82E748B062CC7977; tokenParams=?e_code=505464; lolqqcomrouteLine=index-tool_index-page_index-page_a20210615tftintegration_a20210615tftintegration_a20210615tftintegration_a20210615tftintegration; tvfe_boss_uuid=68e188fc15286d18; o_cookie=2865301533; LW_uid=V1x675N2u3p29107G324n2i034; eas_sid=v176H55233O2z1f7U3d462G1f1; ied_qq=o0346559417; LW_sid=11O6H5a2k6E0R3h541U4N0H1U4; pvpqqcomrouteLine=index_index_index_index; ptui_loginuin=2865301533; QZ_FE_WEBP_SUPPORT=1; __Q_w_s_hat_seed=1; __Q_w_s__QZN_TodoMsgCnt=1; zzpaneluin=; zzpanelkey=; uin=o2865301533; p_uin=o2865301533; Loading=Yes; skey=@cKFLvSRuf; pt4_token=rBU3otc9KdMGRq6CxthgwYsGz12ZaPU3xD-4pevbL3g_; p_skey=goHB82QbifoI6G6F7N7Dk3Ao3F5Km9dQKm-E84bR9n8_; cpu_performance_v8=21");
+        HttpPost post = new HttpPost("https://user.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/get_msgb?uin=2865301533&hostUin=2865301533&start=0&s=0.527168987517673&format=jsonp&num=10&inCharset=utf-8&outCharset=utf-8&g_tk=1192955030&g_tk=1192955030");
+        post.addHeader("cookie", "_qpsvr_localtk=0.8547841273414496; RK=jEKI1i3Suz; ptcz=68de294bf6ccd1c2200f4e2663907478975db314035ed09ecc6d8b3a76d6fc78; pgv_pvi=5708006400; pgv_si=s8238196736; pgv_info=ssid=s9214023430; pgv_pvid=9746592055; rv2=8020287853B5DF8D0E0134EE55DBB5D57A516773A644875B68; property20=DF628F5C3BDC238491778E21AB62848825EBCE0B8316CF01845DED188AA2D6DA82E748B062CC7977; tokenParams=?e_code=505464; lolqqcomrouteLine=index-tool_index-page_index-page_a20210615tftintegration_a20210615tftintegration_a20210615tftintegration_a20210615tftintegration; tvfe_boss_uuid=68e188fc15286d18; o_cookie=2865301533; LW_uid=V1x675N2u3p29107G324n2i034; eas_sid=v176H55233O2z1f7U3d462G1f1; ied_qq=o0346559417; LW_sid=11O6H5a2k6E0R3h541U4N0H1U4; pvpqqcomrouteLine=index_index_index_index; ptui_loginuin=2865301533; QZ_FE_WEBP_SUPPORT=1; __Q_w_s_hat_seed=1; __Q_w_s__QZN_TodoMsgCnt=1; zzpaneluin=; zzpanelkey=; Loading=Yes; qz_screen=1920x1080; uin=o2865301533; skey=@wdRZ2auDB; p_uin=o2865301533; pt4_token=ANTjV64yDxP5vLrJ3EdsWT8aGi9wzhzVYRdPO4-9e5Q_; p_skey=bOro3l0oOGMVDR5dg4Kp9vkMUbUcpjeQZsgS1zXaN14_; 2865301533_todaycount=6; 2865301533_totalcount=53; cpu_performance_v8=12");
 
         post.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 
@@ -83,7 +83,7 @@ public class ApiTest {
                 "outCharset=utf-8&" +
                 "ref=qzone&" +
                 "json=1&" +
-                "g_tk=1124245486&" + // 1
+                "g_tk=1066147756&" + // 1
                 "qzreferrer=https%3A%2F%2Fuser.qzone.qq.com%2Fproxy%2Fdomain%2Fqzs.qq.com%2Fqzone%2Fmsgboard%2Fmsgbcanvas.html%23page%3D1";
 
 
@@ -97,6 +97,30 @@ public class ApiTest {
             System.out.println(res);
         } else {
             System.out.println(response);
+        }
+
+
+    }
+
+    @Test
+    public void test_chatGPT() throws IOException {
+        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+
+        HttpPost post = new HttpPost("https://api.openai.com/v1/completions");
+        post.addHeader("Content-Type", "application/json");
+        post.addHeader("Authorization", "Bearer 自行申请 https://beta.openai.com/overview");
+
+        String paramJson = "{\"model\": \"text-davinci-003\", \"prompt\": \"你好\", \"temperature\": 0, \"max_tokens\": 1024}";
+
+        StringEntity stringEntity = new StringEntity(paramJson, ContentType.create("text/json", "UTF-8"));
+        post.setEntity(stringEntity);
+
+        CloseableHttpResponse response = httpClient.execute(post);
+        if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+            String res = EntityUtils.toString(response.getEntity());
+            System.out.println(res);
+        } else {
+            System.out.println(response.getStatusLine().getStatusCode());
         }
 
 

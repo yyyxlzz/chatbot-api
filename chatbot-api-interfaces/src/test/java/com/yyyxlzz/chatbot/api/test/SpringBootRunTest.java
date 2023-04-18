@@ -1,23 +1,23 @@
 package com.yyyxlzz.chatbot.api.test;
 
-import com.yyyxlzz.chatbot.api.domain.zsxq.IZsxqApi;
-import com.yyyxlzz.chatbot.api.domain.zsxq.model.aggregates.UnAnsweredQuestionsTopicId;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Value;
+        import com.yyyxlzz.chatbot.api.domain.zsxq.IZsxqApi;
+        import com.yyyxlzz.chatbot.api.domain.zsxq.model.aggregates.UnAnsweredQuestionsTopicId;
+        import org.junit.Test;
+        import org.junit.runner.RunWith;
+        import org.springframework.beans.factory.annotation.Value;
 
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import javax.annotation.Resource;
-import java.io.IOException;
+        import org.springframework.boot.test.context.SpringBootTest;
+        import org.springframework.test.context.junit4.SpringRunner;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
+        import javax.annotation.Resource;
+        import java.io.IOException;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootRunTest {
-//
+    //
     private Logger logger = LoggerFactory.getLogger(SpringBootRunTest.class);
 
     @Value("${chatbot-api.reqHttp}")

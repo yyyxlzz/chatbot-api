@@ -4,7 +4,7 @@ package com.yyyxlzz.chatbot.api.domain.zsxq.model.aggregates;
  * @description 未回答id的聚合信息
  */
 public class UnAnsweredQuestionsTopicId {
-
+//
     private String id;
     private String msg;
 

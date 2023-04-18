@@ -1,7 +1,7 @@
 package com.yyyxlzz.chatbot.api.domain.zsxq.model.vo;
 
 public class ReplyList
-{
+{//
     private String content;
 
     private int uin;

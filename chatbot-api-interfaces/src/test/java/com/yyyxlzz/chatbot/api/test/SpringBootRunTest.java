@@ -17,7 +17,7 @@ import java.io.IOException;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootRunTest {
-
+//
     private Logger logger = LoggerFactory.getLogger(SpringBootRunTest.class);
 
     @Value("${chatbot-api.reqHttp}")

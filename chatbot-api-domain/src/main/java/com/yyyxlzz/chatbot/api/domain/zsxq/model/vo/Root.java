@@ -1,7 +1,7 @@
 package com.yyyxlzz.chatbot.api.domain.zsxq.model.vo;
 
 public class Root
-{
+{//
     private int code;
 
     private int subcode;

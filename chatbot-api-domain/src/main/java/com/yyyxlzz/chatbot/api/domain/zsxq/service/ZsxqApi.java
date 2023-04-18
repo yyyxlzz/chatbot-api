@@ -71,7 +71,7 @@ public class ZsxqApi implements IZsxqApi {
      * @param id 要回答的问题的id
      * @param text 要回答的信息
      * @throws IOException
-     */
+     *///
     @Override
     public Boolean answer(String respHttp, String respCookie, String id,String msg, String text) throws IOException {
         logger.info("当前要回答的问题的id{}：",id);

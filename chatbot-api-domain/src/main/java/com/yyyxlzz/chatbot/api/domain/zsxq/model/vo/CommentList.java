@@ -3,7 +3,7 @@ package com.yyyxlzz.chatbot.api.domain.zsxq.model.vo;
 import java.util.ArrayList;
 import java.util.List;
 public class CommentList
-{
+{//
     private String id;
 
     private int secret;

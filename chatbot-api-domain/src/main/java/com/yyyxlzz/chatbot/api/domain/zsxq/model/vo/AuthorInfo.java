@@ -1,7 +1,7 @@
 package com.yyyxlzz.chatbot.api.domain.zsxq.model.vo;
 
 public class AuthorInfo
-{
+{//
     private String msg;
 
     private String htmlMsg;

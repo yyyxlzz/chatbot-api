@@ -14,7 +14,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -74,8 +73,8 @@ public class ZsxqApi implements IZsxqApi {
      *///
     @Override
     public Boolean answer(String respHttp, String respCookie, String id,String msg, String text) throws IOException {
-        logger.info("当前要回答的问题的id{}：",id);
-        logger.info("当前要回答的问题msg{}：",msg);
+        logger.info("当前要回答的问题的id：{}",id);
+        logger.info("当前要回答的问题msg：{}",msg);
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
         // https://h5.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/add_reply?&g_tk=1066147756

@@ -41,7 +41,7 @@ public class SpringBootRunTest {
         String id = unAnsweredQuestionsTopicId.getId();
         String msg = unAnsweredQuestionsTopicId.getMsg();
         // 根据id对未回答的留言进行回复
-        Boolean answer = zsxqApi.answer(respHttp, respCookie, id,msg,"springboot运行测试16.22");
+        Boolean answer = zsxqApi.answer(respHttp, respCookie, id,msg,"springboot运行测试20.59");
         logger.info("根据id对未回答的留言进行回复---{}",answer);
     }
 }
